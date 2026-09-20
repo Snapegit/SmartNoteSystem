@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.BijifenleiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.BijifenleiEntity" id="bijifenleiMap">
+        <result property="bijifenlei" column="bijifenlei"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.BijifenleiView" >
+
+		SELECT  bijifenlei.* FROM bijifenlei  bijifenlei 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.BijifenleiView" >
+		SELECT * FROM bijifenlei  bijifenlei <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
